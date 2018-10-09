@@ -1,0 +1,12 @@
+.logo-title {
+  margin: 0;
+
+  &[href]:hover,
+  &[href]:focus {
+    opacity: 0.8;
+  }
+
+  &[href]:active {
+    opacity: 0.6;
+  }
+}

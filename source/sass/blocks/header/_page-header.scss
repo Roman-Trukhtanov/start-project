@@ -1,0 +1,160 @@
+.page-header__inner {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.page-header__wrapper {
+  margin: 0 auto;
+  padding-top: 11px;
+  padding-bottom: 13px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  width: 320px;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-header__logo[href] {
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.page-header__menu-toggle {
+  padding: 0;
+  margin: 0;
+  margin-right: 3px;
+
+  display: block;
+  width: 18px;
+  height: 18px;
+
+  border: none;
+  background-color: transparent;
+
+  &--close::before {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 18px;
+
+    background-image: url("../img/icon-close.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &--open {
+    width: 24px;
+    height: 18px;
+  }
+
+  &--open::before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 18px;
+    margin-left: 3px;
+
+    background-image: url("../img/icon-mobile-menu.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .page-header {
+    margin: 0 auto;
+
+    padding-top: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 36px;
+
+    width: 768px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .page-header__inner {
+    margin-right: auto;
+    border: none;
+    flex-shrink: 0;
+  }
+
+  .page-header__wrapper {
+    margin: 0;
+    padding: 0;
+
+    width: auto;
+  }
+
+  .page-header__menu-toggle {
+    display: none;
+  }
+
+  .page-header__logo {
+    width: 173px;
+    height: 58px;
+
+    padding-top: 0;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .page-header {
+    padding-top: 62px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-bottom: 44px;
+
+    width: 1300px;
+
+
+    &--index-page::before {
+      content: "";
+
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      width: 50%;
+      height: 696px;
+
+      background-color: #64a83b;
+
+      z-index: -2;
+
+      background-image: url("../img/index-background-desktop@1x.jpg");
+      background-repeat: no-repeat;
+      background-position: right top;
+
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/index-background-desktop@2x.jpg");
+        background-size: 720px 696px;
+      }
+    }
+  }
+
+  .page-header__logo {
+    margin-top: -9px;
+    padding: 0;
+    width: 202px;
+    height: 59px;
+  }
+
+  .page-header__logo-image {
+    width: 100%;
+    height: auto;
+  }
+}

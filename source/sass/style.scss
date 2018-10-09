@@ -1,0 +1,22 @@
+/* Normalize (Начало)*/
+@import "normalize";
+/* Normalize (Конец) */
+/* Переменные (Начало) */
+@import "variables";
+/* Переменные (Конец) */
+/* Примеси (Начало) */
+@import "mixins";
+/* Примеси (Конец) */
+/* Шрифты (Начало)*/
+@import "fonts";
+/* Шрифты (Конец)*/
+/* Глобальные стили (Начало) */
+@import "scaffolding";
+/* Глобальные стили (Конец) */
+/* Общие блоки (Начало) */
+@import "blocks/container",
+  "blocks/visually-hidden",
+  "blocks/logo-title",
+  "blocks/button",
+  "blocks/subtitle-item";
+/* Общие блоки (Конец) */
