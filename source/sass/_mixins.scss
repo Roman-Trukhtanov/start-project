@@ -1,3 +1,29 @@
-@mixin other-mixin {
+@mixin only-tablet-width {
+  @media (max-width: #{$only-tablet}) {
+    @content;
+  }
+}
 
+@mixin tablet-width {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop-width {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin hd-desktop-width {
+  @media (min-width: #{$hd-desktop}) {
+    @content;
+  }
+}
+
+@mixin full-hd-desktop-width {
+  @media (min-width: #{$full-hd-desktop}) {
+    @content;
+  }
 }

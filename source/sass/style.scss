@@ -1,6 +1,3 @@
-/* Normalize (Начало)*/
-@import "normalize";
-/* Normalize (Конец) */
 /* Переменные (Начало) */
 @import "variables";
 /* Переменные (Конец) */
@@ -10,13 +7,17 @@
 /* Шрифты (Начало)*/
 @import "fonts";
 /* Шрифты (Конец)*/
+/* Bootstrap (Начало) */
+@import "../../node_modules/bootstrap/scss/bootstrap-reboot";
+/* Bootstrap (Конец) */
 /* Глобальные стили (Начало) */
 @import "scaffolding";
 /* Глобальные стили (Конец) */
+/* Сетака Bootstrap */
+@import "../../node_modules/bootstrap/scss/grid";
+/* Сетака Bootstrap (Конец) */
 /* Общие блоки (Начало) */
-@import "blocks/container",
-  "blocks/visually-hidden",
+@import "blocks/visually-hidden",
   "blocks/logo-title",
-  "blocks/button",
-  "blocks/subtitle-item";
+  "blocks/button";
 /* Общие блоки (Конец) */

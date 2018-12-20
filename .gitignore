@@ -7,6 +7,7 @@
 *.sublime*
 node_modules/
 npm-debug.*
+source/templates/
 source/css/*.css
 Thumbs.db
 build/
