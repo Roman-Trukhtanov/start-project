@@ -11,3 +11,4 @@ source/templates/
 source/css/*.css
 Thumbs.db
 build/
+desktop.ini

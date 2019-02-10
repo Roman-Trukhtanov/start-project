@@ -4,6 +4,7 @@
   "private": true,
   "description": "project description",
   "devDependencies": {
+    "@glidejs/glide": "^3.2.5",
     "@htmlacademy/editorconfig-cli": "1.x",
     "autoprefixer": "9.4.x",
     "autosize": "^4.0.2",
@@ -27,12 +28,8 @@
     "gulp-svgstore": "^7.0.0",
     "gulp-uglify": "^3.0.1",
     "gulp-webp": "^3.0.0",
-    "jquery": "^1.12.4",
-    "jquery.maskedinput": "^1.4.1",
     "path": "^0.12.7",
-    "popper.js": "^1.14.4",
     "posthtml-include": "^1.2.0",
-    "slick-carousel": "^1.8.1",
     "stylelint": "9.6.x",
     "stylelint-config-htmlacademy": "0.1.x"
   },
@@ -51,9 +48,9 @@
   "editorconfig-cli": [
     "*.json",
     "*.js",
-    "source/*.html",
-    "source/js/**/*.js",
-    "source/img/**/*.svg",
+    "source/**/*.html",
+    "source/assets/js/**/*.js",
+    "source/assets/img/**/*.svg",
     "source/sass/**/*.{sass,scss}"
   ],
   "engines": {
