@@ -20,6 +20,9 @@ const uglify = require("gulp-uglify");
 const  htmlmin = require("gulp-htmlmin");
 const  debug = require("gulp-debug");
 const  cached = require("gulp-cached");
+const gulpif = require("gulp-if");
+const argv = require("yargs").argv;
+const sourcemaps = require("gulp-sourcemaps");
 
 var PUBLIC_DEST = "build";
 
@@ -61,8 +64,10 @@ gulp.task("sprite", function() {
 gulp.task("minjs", function () {
   return gulp.src(SOURCE_DEST + RESOURCES + "/js/main.js")
     .pipe(plumber())
+    .pipe(gulpif(!argv.prod, sourcemaps.init()))
     .pipe(jsInclude())
     .pipe(uglify())
+    .pipe(gulpif(!argv.prod, sourcemaps.init()))
     .pipe(rename("main.min.js"))
     .pipe(gulp.dest(PUBLIC_DEST + RESOURCES + "/js"));
 });
@@ -104,12 +109,14 @@ gulp.task("copy", function() {
 gulp.task("style", function(done) {
   gulp.src(SOURCE_DEST + "/sass/style.scss")
     .pipe(plumber())
+    .pipe(gulpif(!argv.prod, sourcemaps.init()))
     .pipe(sass())
     .pipe(postcss([
       autoprefixer()
     ]))
     .pipe(gulp.dest(SOURCE_DEST + RESOURCES + "/css"))
     .pipe(minify())
+    .pipe(gulpif(!argv.prod, sourcemaps.write()))
     .pipe(rename("style.min.css"))
     .pipe(gulp.dest(PUBLIC_DEST + RESOURCES + "/css"))
     .pipe(server.stream());
