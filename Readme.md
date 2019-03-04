@@ -6,6 +6,12 @@
 npm run build
 ```
 
+Сборка проекта для Production:
+
+```
+npm run prod
+```
+
 Запуск проекта в dev - режиме:
 
 ```
