@@ -18,9 +18,9 @@ const cached = require('gulp-cached');
 const gulpif = require('gulp-if');
 const argv = require('yargs').argv;
 const sourcemaps = require('gulp-sourcemaps');
+const  htmlmin = require('gulp-htmlmin');
 // const  posthtml = require('gulp-posthtml');
 // const  include = require('posthtml-include');
-// const  htmlmin = require('gulp-htmlmin');
 const pug = require('gulp-pug');
 
 var PUBLIC_DEST = 'build';
@@ -86,6 +86,10 @@ gulp.task('pug', () => {
   return gulp.src(`${SOURCE_DEST}/*.pug`)
     .pipe(plumber())
     .pipe(pug({pretty: true}))
+    .pipe(htmlmin({
+      //collapseWhitespace: true,
+      removeComments: true
+    }))
     .pipe(gulp.dest(PUBLIC_DEST))
 });
 
