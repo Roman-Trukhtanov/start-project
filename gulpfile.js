@@ -1,20 +1,20 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
-const  plumber = require('gulp-plumber');
-const  newer = require('gulp-newer');
-const  postcss = require('gulp-postcss');
-const  autoprefixer = require('autoprefixer');
-const  server = require('browser-sync').create();
-const  minify = require('gulp-csso');
-const  rename = require('gulp-rename');
-const  imagemin = require('gulp-imagemin');
-const  webp = require('gulp-webp');
-const  svgstore = require('gulp-svgstore');
-const  del = require('del');
-const  jsInclude = require('gulp-include');
+const plumber = require('gulp-plumber');
+const newer = require('gulp-newer');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const server = require('browser-sync').create();
+const minify = require('gulp-csso');
+const rename = require('gulp-rename');
+const imagemin = require('gulp-imagemin');
+const webp = require('gulp-webp');
+const svgstore = require('gulp-svgstore');
+const del = require('del');
+const jsInclude = require('gulp-include');
 const uglify = require('gulp-uglify');
-const  debug = require('gulp-debug');
-const  cached = require('gulp-cached');
+const debug = require('gulp-debug');
+const cached = require('gulp-cached');
 const gulpif = require('gulp-if');
 const argv = require('yargs').argv;
 const sourcemaps = require('gulp-sourcemaps');
@@ -28,7 +28,6 @@ var PUBLIC_DEST = 'build';
 var SOURCE_DEST = 'source';
 
 var RESOURCES = 'assets';
-
 
 gulp.task('images', () => {
   return gulp.src(`${SOURCE_DEST}/${RESOURCES}/img/**/*.{png,jpg,svg}`)
@@ -88,7 +87,7 @@ gulp.task('pug', () => {
     .pipe(plumber())
     .pipe(pug({pretty: true}))
     .pipe(gulp.dest(PUBLIC_DEST))
-})
+});
 
 gulp.task('clean', () => {
   return del(PUBLIC_DEST);
