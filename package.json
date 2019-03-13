@@ -16,6 +16,7 @@
     "gulp-csso": "^3.0.1",
     "gulp-debug": "^4.0.0",
     "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^2.0.2",
     "gulp-imagemin": "^5.0.3",
     "gulp-include": "^2.3.1",
     "gulp-newer": "^1.4.0",
@@ -24,6 +25,7 @@
     "gulp-posthtml": "^3.0.4",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "4.0.x",
+    "gulp-sourcemaps": "^2.6.5",
     "gulp-stylelint": "^8.0.0",
     "gulp-svgstore": "^7.0.0",
     "gulp-uglify": "^3.0.1",
@@ -31,13 +33,15 @@
     "path": "^0.12.7",
     "posthtml-include": "^1.2.0",
     "stylelint": "9.6.x",
-    "stylelint-config-htmlacademy": "0.1.x"
+    "stylelint-config-htmlacademy": "0.1.x",
+    "yargs": "^13.2.1"
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",
     "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
     "test": "npm run editorconfig && npm run stylelint",
     "build": "gulp build",
+    "prod": "gulp build --prod",
     "start": "npm run build && gulp serve"
   },
   "browserslist": [
