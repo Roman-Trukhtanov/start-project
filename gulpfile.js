@@ -68,7 +68,7 @@ gulp.task("minjs", function () {
     .pipe(jsInclude())
     .pipe(uglify())
     .pipe(rename("main.min.js"))
-    .pipe(gulpif(!argv.prod, sourcemaps.init()))
+    .pipe(gulpif(!argv.prod, sourcemaps.write("./")))
     .pipe(gulp.dest(PUBLIC_DEST + RESOURCES + "/js"));
 });
 
@@ -117,7 +117,7 @@ gulp.task("style", function(done) {
     .pipe(gulp.dest(SOURCE_DEST + RESOURCES + "/css"))
     .pipe(minify())
     .pipe(rename("style.min.css"))
-    .pipe(gulpif(!argv.prod, sourcemaps.write()))
+    .pipe(gulpif(!argv.prod, sourcemaps.write('./')))
     .pipe(gulp.dest(PUBLIC_DEST + RESOURCES + "/css"))
     .pipe(server.stream());
   done();
