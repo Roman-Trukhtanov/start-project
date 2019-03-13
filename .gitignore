@@ -9,6 +9,7 @@ node_modules/
 npm-debug.*
 source/templates/
 source/css/*.css
+source/assets/css/*.css
 Thumbs.db
 build/
 desktop.ini
